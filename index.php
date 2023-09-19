@@ -507,7 +507,7 @@ require 'lib/convertJson.php';
                             <div class="d-flex align-items-center mt-4 pt-2">
                                 <img src="lib/b.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">John Yeager</h5>
+                                    <h5 class="font-size-17 mb-0">Brady Venneman</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
                                 </div>
                             </div>
@@ -524,7 +524,7 @@ require 'lib/convertJson.php';
                             <div class="d-flex align-items-center mt-4 pt-2">
                                 <img src="lib/hunter.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">Berneice Harris</h5>
+                                    <h5 class="font-size-17 mb-0">Hunter Perry</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
                                 </div>
                             </div>
@@ -542,7 +542,7 @@ require 'lib/convertJson.php';
                             <div class="d-flex align-items-center mt-4 pt-2">
                                 <img src="lib/will.png" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">Sarah Pettway</h5>
+                                    <h5 class="font-size-17 mb-0">Will Cuthbert</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
                                 </div>
                             </div>
