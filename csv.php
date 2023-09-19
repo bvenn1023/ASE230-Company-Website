@@ -53,7 +53,7 @@
 
 <?php
 
-function printData($data, $name, $key = null) {
+function printcsv($data, $name, $key = null) {
     if (isset($data[$name])) {
         $section = $data[$name];
         echo '<h4 class="mb-3 font-size-22">' . $name . '</h4>';
@@ -61,11 +61,16 @@ function printData($data, $name, $key = null) {
         if ($key !== null && isset($section[$key])) {
             echo '<p>' . $section[$key] . '</p>';
         } elseif (is_array($section)) {
-            echo '<ul>';
-            foreach ($section as $key => $value) {
-                echo '<li>' . $key . ': ' . $value . '</li>';
+            if ($key !== null) {
+                echo "Team member '$key' not found in '$name'.";
+            } else {
+                // Display the entire team
+                echo '<ul>';
+                foreach ($section as $name => $value) {
+                    echo '<li>' . $name . ': ' . $value . '</li>';
+                }
+                echo '</ul>';
             }
-            echo '</ul>';
         } else {
             echo '<p class="text-muted mb-0">Description: ' . $section . '</p>';
         }
@@ -90,4 +95,5 @@ $data = array(
     )
 );
 
-printData($data, 'Awards', '2023');
+// Display specific team member's information
+// printData($data, 'Team', 'Capt. Helena Vance - Founder & CEO');
