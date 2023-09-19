@@ -1,5 +1,4 @@
 <?php
-
 function printcsv($data, $name, $key = null) {
     if (isset($data[$name])) {
         $section = $data[$name];
@@ -42,6 +41,6 @@ $data = array(
     )
 );
 
-// Display specific team member's information
-// printData($data, 'Team', 'Capt. Helena Vance - Founder & CEO');
+// Call the function to display a specific section
+//printcsv($data, 'Team', 'Capt. Helena Vance - Founder & CEO');
 ?>
