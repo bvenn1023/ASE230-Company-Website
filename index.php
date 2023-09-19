@@ -268,7 +268,7 @@ require 'lib/csv.php';
                             <h5 class="font-size-19 mb-1">Will Cuthbert</h5>
                             <p class="text-muted text-uppercase font-size-14 mb-0">Developer</p>
                     
-                    <? php printData($data, 'Awards', '2023');  
+                    <? php echo printData($data, 'Awards', '2023');  
 
 ?>
                         </div>
