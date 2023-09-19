@@ -269,7 +269,7 @@ require 'lib/csv.php';
                         </div>
                         <div class="p-4">
                             <h5 class="font-size-19 mb-1">Will Cuthbert</h5>
-
+                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Dr. Hiroshi Nakamura - CTO'); ?></p>
                         </div>
                     </div>
                 </div>
