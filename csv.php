@@ -90,4 +90,4 @@ $data = array(
     )
 );
 
-//printData($data, 'Awards', '2023');
+printData($data, 'Awards', '2023');
