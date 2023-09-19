@@ -426,7 +426,7 @@ require 'lib/convertJson.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Frances Thompson</h5>
+                            <h5 class="font-size-19 mb-1">Will Cuthbert</h5>
                             <p class="text-muted text-uppercase font-size-14 mb-0">Developer</p>
                         </div>
                     </div>
@@ -450,7 +450,7 @@ require 'lib/convertJson.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">John Jones</h5>
+                            <h5 class="font-size-19 mb-1">Hunter Perry</h5>
                             <p class="text-muted text-uppercase font-size-14 mb-0">Ceo</p>
                         </div>
                     </div>
@@ -474,35 +474,12 @@ require 'lib/convertJson.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Della Hobbs</h5>
+                            <h5 class="font-size-19 mb-1">Brady Venneman</h5>
                             <p class="text-muted text-uppercase font-size-14 mb-0">Designer</p>
                         </div>
                     </div>
                 </div>
                 <!-- end col -->
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-                        <div class="position-relative overflow-hidden">
-                            <img src="images/team/4.jpg" alt="" class="img-fluid d-block mx-auto" />
-                            <ul class="list-inline p-3 mb-0 team-social-item">
-                                <li class="list-inline-item mx-3">
-                                    <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-3">
-                                    <a href="javascript: void(0);" class="team-social-icon h-info"><i class="icon-sm" data-feather="twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-3">
-                                    <a href="javascript: void(0);" class="team-social-icon h-danger"><i class="icon-sm" data-feather="instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Troy Jordon</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Developer</p>
-                        </div>
-                    </div>
-                </div>
                 <!-- end col -->
             </div>
             <!-- end row -->
@@ -528,7 +505,7 @@ require 'lib/convertJson.php';
                             <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Step bt step to conduct usability testing</a></h4>
                             <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                             <div class="d-flex align-items-center mt-4 pt-2">
-                                <img src="images/user/img-2.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+                                <img src="lib/b.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
                                     <h5 class="font-size-17 mb-0">John Yeager</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
@@ -545,7 +522,7 @@ require 'lib/convertJson.php';
                             <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Increase conversion rate from ad to landing page</a></h4>
                             <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                             <div class="d-flex align-items-center mt-4 pt-2">
-                                <img src="images/user/img-3.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+                                <img src="lib/hunter.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
                                     <h5 class="font-size-17 mb-0">Berneice Harris</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
@@ -563,7 +540,7 @@ require 'lib/convertJson.php';
                             <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Why small business should start marketing</a></h4>
                             <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                             <div class="d-flex align-items-center mt-4 pt-2">
-                                <img src="images/user/img-1.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+                                <img src="lib/will.png" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
                                     <h5 class="font-size-17 mb-0">Sarah Pettway</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
