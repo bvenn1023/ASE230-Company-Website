@@ -1,5 +1,6 @@
 <?php
-printcsv($data, $name, $key = null) {
+
+function printcsv($data, $name, $key = null) {
     if (isset($data[$name])) {
         $section = $data[$name];
         echo '<h4 class="mb-3 font-size-22">' . $name . '</h4>';
@@ -40,3 +41,7 @@ $data = array(
         'Dr. Imani Okoro - Head of AeroAcademy™' => 'A space historian and a former NASA educator, Dr. Okoro shapes the curriculum, ensuring that the academy produces the best minds in aerospace.'
     )
 );
+
+// Display specific team member's information
+// printData($data, 'Team', 'Capt. Helena Vance - Founder & CEO');
+?>
