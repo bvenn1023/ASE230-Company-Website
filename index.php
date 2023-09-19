@@ -412,7 +412,7 @@ require 'lib/convertJson.php';
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/team/1.jpg" alt="" class="img-fluid d-block mx-auto" />
+                            <img src="lib/will.png" alt="" class="img-fluid d-block mx-auto" />
                             <ul class="list-inline p-3 mb-0 team-social-item">
                                 <li class="list-inline-item mx-3">
                                     <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
@@ -436,7 +436,7 @@ require 'lib/convertJson.php';
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/team/2.jpg" alt="" class="img-fluid d-block mx-auto" />
+                            <img src="lib/hunter.jpg" alt="" class="img-fluid d-block mx-auto" />
                             <ul class="list-inline p-3 mb-0 team-social-item">
                                 <li class="list-inline-item mx-3">
                                     <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
@@ -460,7 +460,7 @@ require 'lib/convertJson.php';
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/team/3.jpg" alt="" class="img-fluid d-block mx-auto" />
+                            <img src="lib/b.jpg" alt="" class="img-fluid d-block mx-auto" />
                             <ul class="list-inline p-3 mb-0 team-social-item">
                                 <li class="list-inline-item mx-3">
                                     <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
