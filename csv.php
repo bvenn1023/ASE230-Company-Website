@@ -1,4 +1,3 @@
-
 <?php
 printcsv($data, $name, $key = null) {
     if (isset($data[$name])) {
@@ -41,5 +40,4 @@ $data = array(
         'Dr. Imani Okoro - Head of AeroAcademy™' => 'A space historian and a former NASA educator, Dr. Okoro shapes the curriculum, ensuring that the academy produces the best minds in aerospace.'
     )
 );
-
 
