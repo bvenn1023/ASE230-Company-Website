@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -87,7 +86,7 @@ require 'lib/csv.php';
                     <div class="text-center">
                         <span class="badge badge-soft-primary mb-4">Orion Aerospace</span>
                         <h1 class="font-weight-semibold mb-4 hero-3-title">Mission Statement</h1>
-                        <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php text('data/mission.txt')?></p>
+                        <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php text('data/mission.txt') ?></p>
 
                         <div>
                             <button type="button" class="btn btn-primary rounded-pill me-2">Work With Us</button>
@@ -226,7 +225,7 @@ require 'lib/csv.php';
                 <div class="col-lg-8">
                     <div class="text-center">
                         <h1 class="text-white mb-4">Who We Are</h1>
-                        <p class="text-white mb-5 font-size-16"><?php text('data/overview.txt')?></p>
+                        <p class="text-white mb-5 font-size-16"><?php text('data/overview.txt') ?></p>
                         <a href="#" class="btn btn-lg btn-light">Ask for Demonstration</a>
                     </div>
                 </div>
@@ -238,7 +237,7 @@ require 'lib/csv.php';
     </section>
     <!-- Cta end -->
 
-   
+
 
     <!-- Team start -->
     <section class="section bg-light" id="team">
@@ -270,11 +269,7 @@ require 'lib/csv.php';
                         </div>
                         <div class="p-4">
                             <h5 class="font-size-19 mb-1">Will Cuthbert</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Developer</p>
-                    
-                    <? php echo printData($data, 'Awards', '2023');  
 
-?>
                         </div>
                     </div>
                 </div>
@@ -298,7 +293,7 @@ require 'lib/csv.php';
                         </div>
                         <div class="p-4">
                             <h5 class="font-size-19 mb-1">Hunter Perry</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Ceo</p>
+                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Leo Rodriguez - Chief of Design'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -322,7 +317,7 @@ require 'lib/csv.php';
                         </div>
                         <div class="p-4">
                             <h5 class="font-size-19 mb-1">Brady Venneman</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Designer</p>
+                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Capt. Helena Vance - Founder & CEO'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -340,8 +335,11 @@ require 'lib/csv.php';
         <div class="container">
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-7 text-center">
-                    <h2 class="fw-bold">Our Blog</h2>
-                    <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                    <h2 class="fw-bold">Our Awards:</h2>
+                    <p class="text-muted"><?php printcsv($data, 'Awards', '2023');  ?></p>
+                    <p class="text-muted"><?php printcsv($data, 'Awards', '2022');  ?></p>
+                    <p class="text-muted"><?php printcsv($data, 'Awards', '2021');  ?></p>
+                    
                 </div>
             </div>
             <div class="row">
@@ -622,4 +620,3 @@ require 'lib/csv.php';
 </body>
 
 </html>
-
