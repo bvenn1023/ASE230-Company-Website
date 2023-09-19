@@ -1,5 +1,5 @@
 <?php
-printcsv($data, $name, $key = null) {
+function printcsv($data, $name, $key = null) {
     if (isset($data[$name])) {
         $section = $data[$name];
         echo '<h4 class="mb-3 font-size-22">' . $name . '</h4>';
