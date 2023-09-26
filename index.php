@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require 'lib/convertJson.php';
-
-
+require 'lib/txt.php';
+require 'lib/csv.php';
 ?>
 
 <head>
@@ -56,9 +60,7 @@ require 'lib/convertJson.php';
                     <li class="nav-item">
                         <a href="#features" class="nav-link">Features</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#pricing" class="nav-link">Pricing</a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="#team" class="nav-link">Team</a>
                     </li>
@@ -84,10 +86,10 @@ require 'lib/convertJson.php';
                     <div class="text-center">
                         <span class="badge badge-soft-primary mb-4">Orion Aerospace</span>
                         <h1 class="font-weight-semibold mb-4 hero-3-title">Mission Statement</h1>
-                        <p class="mb-5 text-muted subtitle w-75 mx-auto">Mission</p>
+                        <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php text('data/mission.txt') ?></p>
 
                         <div>
-                            <button type="button" class="btn btn-primary rounded-pill me-2">Sign up for free</button>
+                            <button type="button" class="btn btn-primary rounded-pill me-2">Work With Us</button>
                             <button type="button" class="btn btn-light rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#watchvideomodal">Play video <i class="ms-1 icon-sm align-middle" data-feather="play-circle"></i></button>
                         </div>
 
@@ -127,7 +129,7 @@ require 'lib/convertJson.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="box"></i>
                             </div>
-                            <?php printJson($jsonFile, 'Galactic Cruiser'); ?>
+                            <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
                         </div>
                     </div>
                 </div>
@@ -139,7 +141,7 @@ require 'lib/convertJson.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="layers"></i>
                             </div>
-                            <?php printJson($jsonFile, 'SkySailor Drones'); ?>
+                            <?php printTeamMembers("Dr. Hiroshi Nakamura - CTO", "Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use."); ?>
                         </div>
                     </div>
                 </div>
@@ -151,7 +153,7 @@ require 'lib/convertJson.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="server"></i>
                             </div>
-                            <?php printJson($jsonFile, 'Nebula Stations'); ?>
+                            <?php printTeamMembers("Leo Rodriguez - Chief of Design", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
                         </div>
                     </div>
                 </div>
@@ -223,7 +225,7 @@ require 'lib/convertJson.php';
                 <div class="col-lg-8">
                     <div class="text-center">
                         <h1 class="text-white mb-4">Who We Are</h1>
-                        <p class="text-white mb-5 font-size-16">Overview</p>
+                        <p class="text-white mb-5 font-size-16"><?php text('data/overview.txt') ?></p>
                         <a href="#" class="btn btn-lg btn-light">Ask for Demonstration</a>
                     </div>
                 </div>
@@ -235,167 +237,7 @@ require 'lib/convertJson.php';
     </section>
     <!-- Cta end -->
 
-    <!-- Pricing start -->
-    <section class="section" id="pricing">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-7 text-center">
-                    <h2 class="fw-bold">Pricing Plan</h2>
-                    <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
-                </div>
-            </div>
-            <!-- end row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center mb-4 pricing-tab">
-                        <ul class="nav nav-pills rounded-pill justify-content-center d-inline-block shadow-sm" id="pricingpills-tab" role="tablist">
-                            <li class="nav-item d-inline-block">
-                                <a class="nav-link rounded-pill active" id="pills-monthly-tab" data-bs-toggle="pill" href="#pills-monthly" role="tab" aria-controls="pills-monthly" aria-selected="true">Monthly</a>
-                            </li>
-                            <li class="nav-item d-inline-block">
-                                <a class="nav-link rounded-pill" id="pills-yearly-tab" data-bs-toggle="pill" href="#pills-yearly" role="tab" aria-controls="pills-yearly" aria-selected="false">Yearly</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-content" id="pricingpills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
-                                        <div class="card-body px-4 py-5">
-                                            <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="circle"></i></div> -->
-                                            <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
-                                                <img src="images/pricing/1.png" alt="" class="img-fluid d-block mx-auto" />
-                                            </div>
-                                            <h4 class="text-uppercase mb-4 pb-1">Basic</h4>
-                                            <p class="text-muted">Onlinespace: <span class="fw-bold">50MB</span></p>
-                                            <p class="text-muted">Support: <span class="fw-bold">No</span></p>
-                                            <p class="text-muted mb-4 pb-1">Domain 1</p>
-                                            <p class="text-muted font-size-14 mb-1">All Extension Included</p>
-                                            <p class="font-size-16 font-weight-semibold mb-4 price-tag">$9.00 / Month</p>
-                                            <a href="javascript: void(0);" class="btn btn-soft-primary">Buy Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end col -->
-                                <div class="col-lg-4">
-                                    <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
-                                        <div class="card-body px-4 py-5">
-                                            <span class="badge badge-primary pricing-badge shadow-lg">Most Popular</span>
-                                            <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="square"></i></div> -->
-                                            <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
-                                                <img src="images/pricing/2.png" alt="" class="img-fluid d-block mx-auto" />
-                                            </div>
-                                            <h4 class="text-uppercase mb-4 pb-1">Standard</h4>
-                                            <p class="text-muted">Onlinespace: <span class="fw-bold">100MB</span></p>
-                                            <p class="text-muted">Support: <span class="fw-bold">Yes</span></p>
-                                            <p class="text-muted mb-4 pb-1">Domain 1</p>
-                                            <p class="text-muted font-size-14 mb-1">All Extension Included</p>
-                                            <p class="font-size-16 font-weight-semibold mb-4 price-tag">$39.00 / Month</p>
-                                            <a href="javascript: void(0);" class="btn btn-primary">Buy Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end col -->
-                                <div class="col-lg-4">
-                                    <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
-                                        <div class="card-body px-4 py-5">
-                                            <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="triangle"></i></div> -->
-                                            <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
-                                                <img src="images/pricing/3.png" alt="" class="img-fluid d-block mx-auto" />
-                                            </div>
-                                            <h4 class="text-uppercase mb-4 pb-1">Premium</h4>
-                                            <p class="text-muted">Onlinespace: <span class="fw-bold">200MB</span></p>
-                                            <p class="text-muted">Support: <span class="fw-bold">No</span></p>
-                                            <p class="text-muted mb-4 pb-1">Domain 1</p>
-                                            <p class="text-muted font-size-14 mb-1">All Extension Included</p>
-                                            <p class="font-size-16 font-weight-semibold mb-4 price-tag">$79.00 / Month</p>
-                                            <a href="javascript: void(0);" class="btn btn-soft-primary">Buy Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end col -->
-                            </div>
-                            <!-- end row -->
-                        </div>
-                        <!-- end monthly tab pane -->
 
-                        <div class="tab-pane fade" id="pills-yearly" role="tabpanel" aria-labelledby="pills-yearly-tab">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
-                                        <div class="card-body px-4 py-5">
-                                            <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="circle"></i></div> -->
-                                            <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
-                                                <img src="images/pricing/1.png" alt="" class="img-fluid d-block mx-auto" />
-                                            </div>
-                                            <h4 class="text-uppercase mb-4 pb-1">Basic</h4>
-                                            <p class="text-muted">Onlinespace: <span class="fw-bold">50MB</span></p>
-                                            <p class="text-muted">Support: <span class="fw-bold">No</span></p>
-                                            <p class="text-muted mb-4 pb-1">Domain 1</p>
-                                            <p class="text-muted font-size-14 mb-1">All Extension Included</p>
-                                            <p class="font-size-16 font-weight-semibold mb-4 price-tag">$29.00 / Year</p>
-                                            <a href="javascript: void(0);" class="btn btn-soft-primary">Buy Now</a>
-                                        </div>
-                                        <!-- end cardbody -->
-                                    </div>
-                                    <!-- end card -->
-                                </div>
-                                <!-- end col -->
-                                <div class="col-lg-4">
-                                    <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
-                                        <div class="card-body px-4 py-5">
-                                            <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="square"></i></div> -->
-                                            <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
-                                                <img src="images/pricing/2.png" alt="" class="img-fluid d-block mx-auto" />
-                                            </div>
-                                            <h4 class="text-uppercase mb-4 pb-1">Standard</h4>
-                                            <p class="text-muted">Onlinespace: <span class="fw-bold">100MB</span></p>
-                                            <p class="text-muted">Support: <span class="fw-bold">Yes</span></p>
-                                            <p class="text-muted mb-4 pb-1">Domain 1</p>
-                                            <p class="text-muted font-size-14 mb-1">All Extension Included</p>
-                                            <p class="font-size-16 font-weight-semibold mb-4 price-tag">$49.00 / Year</p>
-                                            <a href="javascript: void(0);" class="btn btn-soft-primary">Buy Now</a>
-                                        </div>
-                                        <!-- end cardbody -->
-                                    </div>
-                                    <!-- end card -->
-                                </div>
-                                <!-- end col -->
-                                <div class="col-lg-4">
-                                    <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
-                                        <div class="card-body px-4 py-5">
-                                            <span class="badge badge-primary pricing-badge shadow-lg">Most Popular</span>
-                                            <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="triangle"></i></div> -->
-                                            <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
-                                                <img src="images/pricing/3.png" alt="" class="img-fluid d-block mx-auto" />
-                                            </div>
-                                            <h4 class="text-uppercase mb-4 pb-1">Premium</h4>
-                                            <p class="text-muted">Onlinespace: <span class="fw-bold">200MB</span></p>
-                                            <p class="text-muted">Support: <span class="fw-bold">No</span></p>
-                                            <p class="text-muted mb-4 pb-1">Domain 1</p>
-                                            <p class="text-muted font-size-14 mb-1">All Extension Included</p>
-                                            <p class="font-size-16 font-weight-semibold mb-4 price-tag">$99.00 / Year</p>
-                                            <a href="javascript: void(0);" class="btn btn-soft-primary">Buy Now</a>
-                                        </div>
-                                        <!-- end cardbody -->
-                                    </div>
-                                    <!-- end card -->
-                                </div>
-                                <!-- end col -->
-                            </div>
-                        </div>
-                        <!-- end yearly tab pane -->
-                    </div>
-                    <!-- end tab content -->
-                </div>
-                <!-- end col -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- Pricing end -->
 
     <!-- Team start -->
     <section class="section bg-light" id="team">
@@ -412,7 +254,7 @@ require 'lib/convertJson.php';
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/team/1.jpg" alt="" class="img-fluid d-block mx-auto" />
+                            <img src="lib/will.png" alt="" class="img-fluid d-block mx-auto" />
                             <ul class="list-inline p-3 mb-0 team-social-item">
                                 <li class="list-inline-item mx-3">
                                     <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
@@ -426,8 +268,8 @@ require 'lib/convertJson.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Frances Thompson</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Developer</p>
+                            <h5 class="font-size-19 mb-1">Will Cuthbert</h5>
+                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Dr. Hiroshi Nakamura - CTO'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -436,7 +278,7 @@ require 'lib/convertJson.php';
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/team/2.jpg" alt="" class="img-fluid d-block mx-auto" />
+                            <img src="lib/hunter.jpg" alt="" class="img-fluid d-block mx-auto" />
                             <ul class="list-inline p-3 mb-0 team-social-item">
                                 <li class="list-inline-item mx-3">
                                     <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
@@ -450,8 +292,8 @@ require 'lib/convertJson.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">John Jones</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Ceo</p>
+                            <h5 class="font-size-19 mb-1">Hunter Perry</h5>
+                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Leo Rodriguez - Chief of Design'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -460,7 +302,7 @@ require 'lib/convertJson.php';
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/team/3.jpg" alt="" class="img-fluid d-block mx-auto" />
+                            <img src="lib/b.jpg" alt="" class="img-fluid d-block mx-auto" />
                             <ul class="list-inline p-3 mb-0 team-social-item">
                                 <li class="list-inline-item mx-3">
                                     <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
@@ -474,35 +316,12 @@ require 'lib/convertJson.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Della Hobbs</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Designer</p>
+                            <h5 class="font-size-19 mb-1">Brady Venneman</h5>
+                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Capt. Helena Vance - Founder & CEO'); ?></p>
                         </div>
                     </div>
                 </div>
                 <!-- end col -->
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-                        <div class="position-relative overflow-hidden">
-                            <img src="images/team/4.jpg" alt="" class="img-fluid d-block mx-auto" />
-                            <ul class="list-inline p-3 mb-0 team-social-item">
-                                <li class="list-inline-item mx-3">
-                                    <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-3">
-                                    <a href="javascript: void(0);" class="team-social-icon h-info"><i class="icon-sm" data-feather="twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-3">
-                                    <a href="javascript: void(0);" class="team-social-icon h-danger"><i class="icon-sm" data-feather="instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Troy Jordon</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0">Developer</p>
-                        </div>
-                    </div>
-                </div>
                 <!-- end col -->
             </div>
             <!-- end row -->
@@ -516,8 +335,11 @@ require 'lib/convertJson.php';
         <div class="container">
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-7 text-center">
-                    <h2 class="fw-bold">Our Blog</h2>
-                    <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                    <h2 class="fw-bold">Our Awards:</h2>
+                    <p class="text-muted"><?php printcsv($data, 'Awards', '2023');  ?></p>
+                    <p class="text-muted"><?php printcsv($data, 'Awards', '2022');  ?></p>
+                    <p class="text-muted"><?php printcsv($data, 'Awards', '2021');  ?></p>
+                    
                 </div>
             </div>
             <div class="row">
@@ -528,9 +350,9 @@ require 'lib/convertJson.php';
                             <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Step bt step to conduct usability testing</a></h4>
                             <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                             <div class="d-flex align-items-center mt-4 pt-2">
-                                <img src="images/user/img-2.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+                                <img src="lib/b.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">John Yeager</h5>
+                                    <h5 class="font-size-17 mb-0">Brady Venneman</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
                                 </div>
                             </div>
@@ -545,9 +367,9 @@ require 'lib/convertJson.php';
                             <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Increase conversion rate from ad to landing page</a></h4>
                             <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                             <div class="d-flex align-items-center mt-4 pt-2">
-                                <img src="images/user/img-3.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+                                <img src="lib/hunter.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">Berneice Harris</h5>
+                                    <h5 class="font-size-17 mb-0">Hunter Perry</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
                                 </div>
                             </div>
@@ -563,9 +385,9 @@ require 'lib/convertJson.php';
                             <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Why small business should start marketing</a></h4>
                             <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                             <div class="d-flex align-items-center mt-4 pt-2">
-                                <img src="images/user/img-1.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+                                <img src="lib/will.png" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">Sarah Pettway</h5>
+                                    <h5 class="font-size-17 mb-0">Will Cuthbert</h5>
                                     <p class="text-muted mb-0 font-size-14">Designer, New York</p>
                                 </div>
                             </div>
