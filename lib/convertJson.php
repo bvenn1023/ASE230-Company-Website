@@ -1,26 +1,24 @@
 <?php
-
-function printJson($jsonFile, $sectionName) {
-    $jsonData = file_get_contents($jsonFile);
-    $data = json_decode($jsonData, true);
-
-    if (isset($data[$sectionName])) {
-        $section = $data[$sectionName];
-        echo '<h4 class="mb-3 font-size-22">' . $sectionName . '</h4>';
-        
-        echo '<p class="text-muted mb-0">Description: ' . $section['Description'] . '</p>';
-
-        if (isset($section['Applications'])) {
-            echo '<ul>';
-            foreach ($section['Applications'] as $name => $appDescription) {
-                echo '<li>' . $name . ': ' . $appDescription . '</li>';
-            }
-            echo '</ul>';
-        }
-    } else {
-        echo "Section '$sectionName' not found in JSON data.";
-    }
+// Function to print a team member and description
+function printTeamMembers($name, $description) {
+    echo '<h2>Team Member:</h2>';
+    echo '<h4 class="mb-3 font-size-22">' . $name . '</h4>';
+    echo '<p class="text-muted mb-0">Description: ' . $description . '</p>';
 }
 
+// Read the JSON file and decode it
 $jsonFile = __DIR__.'/info.json';
+$jsonData = file_get_contents($jsonFile);
+$data = json_decode($jsonData, true);
 
+// Check if the 'Team' section exists in the JSON data
+if (isset($data['Team'])) {
+    $teamMembers = $data['Team'];
+
+    // Loop through the team members and print each one
+    foreach ($teamMembers as $name => $description) {
+        printTeamMembers($name, $description);
+    }
+} else {
+    echo "Team section not found in JSON data.";
+}
