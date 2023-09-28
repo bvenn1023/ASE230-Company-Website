@@ -86,7 +86,8 @@ require 'lib/csv.php';
                     <div class="text-center">
                         <span class="badge badge-soft-primary mb-4">Orion Aerospace</span>
                         <h1 class="font-weight-semibold mb-4 hero-3-title">Mission Statement</h1>
-                        <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php text('data/mission.txt') ?></p>
+                        <p class="mb-5 text-muted subtitle w-75 mx-auto">"To push the boundaries of human reach, making the vast expanse of space a familiar terrain and
+                            ensuring Earth's skies are traveled sustainably."</p>
 
                         <div>
                             <button type="button" class="btn btn-primary rounded-pill me-2">Work With Us</button>
@@ -129,7 +130,8 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="box"></i>
                             </div>
-                            <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>>>>>>>> main
+
+                            <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
                         </div>
                     </div>
                 </div>
@@ -142,6 +144,7 @@ require 'lib/csv.php';
                                 <i class="" data-feather="layers"></i>
                             </div>
                             <?php printTeamMembers("Dr. Hiroshi Nakamura - CTO", "Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use."); ?>
+
                         </div>
                     </div>
                 </div>
@@ -153,7 +156,9 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="server"></i>
                             </div>
+
                             <?php printTeamMembers("Leo Rodriguez - Chief of Design", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
+
                         </div>
                     </div>
                 </div>
@@ -225,7 +230,11 @@ require 'lib/csv.php';
                 <div class="col-lg-8">
                     <div class="text-center">
                         <h1 class="text-white mb-4">Who We Are</h1>
-                        <p class="text-white mb-5 font-size-16"><?php text('data/overview.txt') ?></p>
+                        <p class="text-white mb-5 font-size-16">Orion Aerospace Dynamics, founded in 2021, is a game-changing aerospace company headquartered
+                            atop the serene peaks of Denver, Colorado. Championing the motto "The Sky is Not the Limit," Orion has
+                            been redefining space exploration and aviation with advanced propulsion systems, space habitats, and
+                            aerial vehicles that seem straight out of science fiction.
+                        </p>
                         <a href="#" class="btn btn-lg btn-light">Ask for Demonstration</a>
                     </div>
                 </div>
@@ -269,7 +278,11 @@ require 'lib/csv.php';
                         </div>
                         <div class="p-4">
                             <h5 class="font-size-19 mb-1">Will Cuthbert</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Dr. Hiroshi Nakamura - CTO'); ?></p>
+                            <p class="text-muted text-uppercase font-size-14 mb-0">
+                            <h2>Team Member:</h2>
+                            <h4 class="mb-3 font-size-22">Dr. Hiroshi Nakamura - CTO</h4>
+                            <p class="text-muted mb-0">Description: A genius in aerospace engineering</p>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -293,7 +306,11 @@ require 'lib/csv.php';
                         </div>
                         <div class="p-4">
                             <h5 class="font-size-19 mb-1">Hunter Perry</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Leo Rodriguez - Chief of Design'); ?></p>
+                            <p class="text-muted text-uppercase font-size-14 mb-0">
+                            <h2>Team Member:</h2>
+                            <h4 class="mb-3 font-size-22">Capt. Helena Vance - Founder & CEO</h4>
+                            <p class="text-muted mb-0">Description: A former astronaut and a propulsion physicist</p>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -317,7 +334,11 @@ require 'lib/csv.php';
                         </div>
                         <div class="p-4">
                             <h5 class="font-size-19 mb-1">Brady Venneman</h5>
-                            <p class="text-muted text-uppercase font-size-14 mb-0"><?php printcsv($data, 'Team', 'Capt. Helena Vance - Founder & CEO'); ?></p>
+                            <p class="text-muted text-uppercase font-size-14 mb-0">
+                            <h2>Team Member:</h2>
+                            <h4 class="mb-3 font-size-22">Leo Rodriguez - Chief of Design</h4>
+                            <p class="text-muted mb-0">Description: With a penchant for blending aesthetics with functionality</p>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -336,10 +357,22 @@ require 'lib/csv.php';
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-7 text-center">
                     <h2 class="fw-bold">Our Awards:</h2>
-                    <p class="text-muted"><?php printcsv($data, 'Awards', '2023');  ?></p>
-                    <p class="text-muted"><?php printcsv($data, 'Awards', '2022');  ?></p>
-                    <p class="text-muted"><?php printcsv($data, 'Awards', '2021');  ?></p>
-                    
+                    <p class="text-muted">
+                    <h2>Team Member:</h2>
+                    <h4 class="mb-3 font-size-22">2023</h4>
+                    <p class="text-muted mb-0">Description: Secured "Aerospace Company of the Decade" title by Aviation Weekly.</p>
+                    </p>
+                    <p class="text-muted">
+                    <h2>Team Member:</h2>
+                    <h4 class="mb-3 font-size-22">2022</h4>
+                    <p class="text-muted mb-0">Description: Successfully launched three Galactic Cruiser™ missions to Mars</p>
+                    </p>
+                    <p class="text-muted">
+                    <h2>Team Member:</h2>
+                    <h4 class="mb-3 font-size-22">2021</h4>
+                    <p class="text-muted mb-0">Description: SkySailor Drones™ adopted by leading ecological researchers for environmental monitoring without carbon footprints.</p>
+                    </p>
+
                 </div>
             </div>
             <div class="row">
