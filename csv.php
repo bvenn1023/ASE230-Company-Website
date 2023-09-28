@@ -23,18 +23,4 @@ function printcsv($name)
                 echo '<h4 class="mb-3 font-size-22">' . $rowData['Name'] . '</h4>';
                 echo '<p class="text-muted mb-0">Description: ' . $rowData['Description'] . '</p>';
                 return; // Exit the function once found
-            }
-        }
-
-        // If the name wasn't found
-        echo "Team member '$name' not found in data.";
-    } else {
-        echo "CSV file not found.";
-    }
-}
-
-// Example usage:
-
-
-
-
+?>

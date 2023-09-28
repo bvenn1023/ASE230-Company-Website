@@ -130,9 +130,8 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="box"></i>
                             </div>
-                            <h2>Team Member:</h2>
-                            <h4 class="mb-3 font-size-22">Capt. Helena Vance - Founder & CEO</h4>
-                            <p class="text-muted mb-0">Description: Modular space habitats intended for research, tourism, and potential future colonization efforts.</p>
+
+                            <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
                         </div>
                     </div>
                 </div>
@@ -144,9 +143,8 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="layers"></i>
                             </div>
-                            <h2>Team Member:</h2>
-                            <h4 class="mb-3 font-size-22">Dr. Hiroshi Nakamura - CTO</h4>
-                            <p class="text-muted mb-0">Description: Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use.</p>
+                            <?php printTeamMembers("Dr. Hiroshi Nakamura - CTO", "Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use."); ?>
+
                         </div>
                     </div>
                 </div>
@@ -158,9 +156,9 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="server"></i>
                             </div>
-                            <h2>Team Member:</h2>
-                            <h4 class="mb-3 font-size-22">Leo Rodriguez - Chief of Design</h4>
-                            <p class="text-muted mb-0">Description: Modular space habitats intended for research, tourism, and potential future colonization efforts.</p>
+
+                            <?php printTeamMembers("Leo Rodriguez - Chief of Design", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
+
                         </div>
                     </div>
                 </div>

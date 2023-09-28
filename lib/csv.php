@@ -1,5 +1,5 @@
 <?php
-// Function to print a team member's description by name
+
 function printcsv($name)
 {
     // Specify the absolute path to the CSV file
@@ -34,6 +34,6 @@ function printcsv($name)
 }
 
 
-
+?>
 
 
