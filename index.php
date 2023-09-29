@@ -84,7 +84,6 @@ require 'lib/csv.php';
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
-
                         <span class="badge badge-soft-primary mb-4"><?php readText("data/info.txt", 1); ?></span>
                         <h1 class="font-weight-semibold mb-4 hero-3-title"><?php readText("data/info.txt", 2); ?></h1>
                         <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php readText("data/info.txt", 3); ?></p>
@@ -143,6 +142,7 @@ require 'lib/csv.php';
                                 <i class="" data-feather="layers"></i>
                             </div>
                             <?php printTeamMembers("Dr. Hiroshi Nakamura - CTO", "Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use."); ?>
+
                         </div>
                     </div>
                 </div>
@@ -156,6 +156,7 @@ require 'lib/csv.php';
                             </div>
 
                             <?php printTeamMembers("Leo Rodriguez - Chief of Design", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
+
                         </div>
                     </div>
                 </div>
