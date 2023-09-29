@@ -1,20 +1,39 @@
 <?php
 
-// Set the content type to CSV
-header('Content-Type: text/csv; charset=utf-8');
+function printcsv($name)
+{
+    // Specify the absolute path to the CSV file
+    $csvFile = __DIR__ . '/info.csv';
 
-// Set the response header to specify that the file should be downloaded as an attachment
-header('Content-Disposition: attachment; filename=data.csv');
+    // Check if the CSV file exists
+    if (file_exists($csvFile)) {
+        // Read the CSV file into an array
+        $csvData = array_map('str_getcsv', file($csvFile));
 
-// Create an array of data
-$data = [['Name', 'Email', 'Phone'], ['John Smith', 'john@example.com', '555-555-1212'], ['Jane Doe', 'jane@example.com', '555-555-1213']];
+        // Extract headers (first row)
+        $headers = array_shift($csvData);
 
-// Open a file handle for writing
-$fp = fopen('php://output', 'w');
+        // Search for the team member by name in the CSV data
+        foreach ($csvData as $row) {
+            $rowData = array_combine($headers, $row);
 
-// Write the data to the file
-foreach ($data as $row) {
-  fputcsv($fp, $row);
+            if ($rowData['Name'] === $name) {
+                // Print the team member's description
+                echo '<h2>Team Member:</h2>';
+                echo '<h4 class="mb-3 font-size-22">' . $rowData['Name'] . '</h4>';
+                echo '<p class="text-muted mb-0">Description: ' . $rowData['Description'] . '</p>';
+                return; // Exit the function once found
+            }
+        }
+
+        // If the name wasn't found
+        echo "Team member '$name' not found in data.";
+    } else {
+        echo "CSV file not found.";
+    }
 }
-// Close the file handle
-fclose($fp);
+
+
+?>
+
+

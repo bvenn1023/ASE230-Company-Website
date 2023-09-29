@@ -84,6 +84,7 @@ require 'lib/csv.php';
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
+
                         <span class="badge badge-soft-primary mb-4"><?php readText("data/info.txt", 1); ?></span>
                         <h1 class="font-weight-semibold mb-4 hero-3-title"><?php readText("data/info.txt", 2); ?></h1>
                         <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php readText("data/info.txt", 3); ?></p>
@@ -129,7 +130,6 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="box"></i>
                             </div>
-
                             <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
                         </div>
                     </div>
@@ -143,7 +143,6 @@ require 'lib/csv.php';
                                 <i class="" data-feather="layers"></i>
                             </div>
                             <?php printTeamMembers("Dr. Hiroshi Nakamura - CTO", "Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use."); ?>
-
                         </div>
                     </div>
                 </div>
@@ -157,7 +156,6 @@ require 'lib/csv.php';
                             </div>
 
                             <?php printTeamMembers("Leo Rodriguez - Chief of Design", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
-
                         </div>
                     </div>
                 </div>
@@ -470,7 +468,6 @@ require 'lib/csv.php';
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-4"><?php readText("data/info.txt", 34); ?></h2>
                     <p class="text-muted mb-5"><?php readText("data/info.txt", 35); ?></p>
-
                     <div>
                         <form method="post" name="myForm" onsubmit="return validateForm()">
                             <p id="error-msg"></p>
@@ -647,5 +644,6 @@ require 'lib/csv.php';
     <!-- App Js -->
     <script src="js/app.js"></script>
 </body>
+
 
 </html>
