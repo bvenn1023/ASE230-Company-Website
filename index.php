@@ -84,10 +84,9 @@ require 'lib/csv.php';
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
-                        <span class="badge badge-soft-primary mb-4">Orion Aerospace</span>
-                        <h1 class="font-weight-semibold mb-4 hero-3-title">Mission Statement</h1>
-                        <p class="mb-5 text-muted subtitle w-75 mx-auto">"To push the boundaries of human reach, making the vast expanse of space a familiar terrain and
-                            ensuring Earth's skies are traveled sustainably."</p>
+                        <span class="badge badge-soft-primary mb-4"><?php readText("data/info.txt", 1); ?></span>
+                        <h1 class="font-weight-semibold mb-4 hero-3-title"><?php readText("data/info.txt", 2); ?></h1>
+                        <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php readText("data/info.txt", 3); ?></p>
 
                         <div>
                             <button type="button" class="btn btn-primary rounded-pill me-2">Work With Us</button>
@@ -118,8 +117,8 @@ require 'lib/csv.php';
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-7 text-center">
-                    <h2 class="fw-bold">Our Services</h2>
-                    <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                    <h2 class="fw-bold"><?php readText("data/info.txt", 4); ?></h2>
+                    <p class="text-muted"><?php readText("data/info.txt", 5); ?></p>
                 </div>
             </div>
             <!-- end row -->
@@ -131,7 +130,6 @@ require 'lib/csv.php';
                                 <i class="" data-feather="box"></i>
                             </div>
                             <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
-
                         </div>
                     </div>
                 </div>
@@ -144,6 +142,7 @@ require 'lib/csv.php';
                                 <i class="" data-feather="layers"></i>
                             </div>
                             <?php printTeamMembers("Dr. Hiroshi Nakamura - CTO", "Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use."); ?>
+
                         </div>
                     </div>
                 </div>
@@ -157,6 +156,7 @@ require 'lib/csv.php';
                             </div>
 
                             <?php printTeamMembers("Leo Rodriguez - Chief of Design", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
+
                         </div>
                     </div>
                 </div>
@@ -174,16 +174,16 @@ require 'lib/csv.php';
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-7 text-center">
-                    <h2 class="fw-bold">Our Features</h2>
-                    <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                    <h2 class="fw-bold"><?php readText("data/info.txt", 6); ?></h2>
+                    <p class="text-muted"><?php readText("data/info.txt", 7); ?></p>
                 </div>
                 <!-- end col -->
             </div>
             <!-- end row -->
             <div class="row align-items-center mb-5">
                 <div class="col-md-5 order-2 order-md-1 mt-md-0 mt-5">
-                    <h2 class="mb-4">Perfect Solution For Small Businesses</h2>
-                    <p class="text-muted mb-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis..</p>
+                    <h2 class="mb-4"><?php readText("data/info.txt", 8); ?></h2>
+                    <p class="text-muted mb-5"><?php readText("data/info.txt", 9); ?></p>
                     <a href="javascript: void(0);" class="btn btn-primary">Find out more <i class="icon-xs ms-2" data-feather="arrow-right"></i></a>
                 </div>
                 <!-- end col -->
@@ -209,8 +209,8 @@ require 'lib/csv.php';
                 </div>
                 <!-- end col -->
                 <div class="col-md-5 ms-md-auto">
-                    <h2 class="mb-4">Build community & conversion with our suite of social tool</h2>
-                    <p class="text-muted mb-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis..</p>
+                    <h2 class="mb-4"><?php readText("data/info.txt", 10); ?></h2>
+                    <p class="text-muted mb-5"><?php readText("data/info.txt", 11); ?></p>
                     <a href="javascript: void(0);" class="btn btn-primary">Find out more <i class="icon-xs ms-2" data-feather="arrow-right"></i></a>
                 </div>
                 <!-- end col -->
@@ -227,11 +227,8 @@ require 'lib/csv.php';
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
-                        <h1 class="text-white mb-4">Who We Are</h1>
-                        <p class="text-white mb-5 font-size-16">Orion Aerospace Dynamics, founded in 2021, is a game-changing aerospace company headquartered
-                            atop the serene peaks of Denver, Colorado. Championing the motto "The Sky is Not the Limit," Orion has
-                            been redefining space exploration and aviation with advanced propulsion systems, space habitats, and
-                            aerial vehicles that seem straight out of science fiction.
+                        <h1 class="text-white mb-4"><?php readText("data/info.txt", 12); ?></h1>
+                        <p class="text-white mb-5 font-size-16"><?php readText("data/info.txt", 13); ?>
                         </p>
                         <a href="#" class="btn btn-lg btn-light">Ask for Demonstration</a>
                     </div>
@@ -251,8 +248,8 @@ require 'lib/csv.php';
         <div class="container">
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-7 text-center">
-                    <h2 class="fw-bold">Our Team Members</h2>
-                    <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                    <h2 class="fw-bold"><?php readText("data/info.txt", 14); ?></h2>
+                    <p class="text-muted"><?php readText("data/info.txt", 15); ?></p>
                 </div>
                 <!-- end col -->
             </div>
@@ -377,14 +374,14 @@ require 'lib/csv.php';
                 <div class="col-lg-4">
                     <div class="card mt-4 border-0 shadow">
                         <div class="card-body p-4">
-                            <span class="badge badge-soft-primary">UI & UX Design</span>
-                            <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Step bt step to conduct usability testing</a></h4>
-                            <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                            <span class="badge badge-soft-primary"><?php readText("data/info.txt", 16); ?></span>
+                            <h4 class="font-size-22 my-4"><a href="javascript: void(0);"><?php readText("data/info.txt", 17); ?></a></h4>
+                            <p class="text-muted"><?php readText("data/info.txt", 18); ?></p>
                             <div class="d-flex align-items-center mt-4 pt-2">
                                 <img src="lib/b.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">Brady Venneman</h5>
-                                    <p class="text-muted mb-0 font-size-14">Designer, New York</p>
+                                    <h5 class="font-size-17 mb-0"><?php readText("data/info.txt", 19); ?></h5>
+                                    <p class="text-muted mb-0 font-size-14"><?php readText("data/info.txt", 20); ?></p>
                                 </div>
                             </div>
                         </div><!-- end cardbody -->
@@ -394,14 +391,14 @@ require 'lib/csv.php';
                 <div class="col-lg-4">
                     <div class="card mt-4 border-0 shadow">
                         <div class="card-body p-4">
-                            <span class="badge badge-soft-primary">CEO</span>
-                            <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Increase conversion rate from ad to landing page</a></h4>
-                            <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                            <span class="badge badge-soft-primary"><?php readText("data/info.txt", 21); ?></span>
+                            <h4 class="font-size-22 my-4"><a href="javascript: void(0);"><?php readText("data/info.txt", 22); ?></a></h4>
+                            <p class="text-muted"><?php readText("data/info.txt", 23); ?></p>
                             <div class="d-flex align-items-center mt-4 pt-2">
                                 <img src="lib/hunter.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">Hunter Perry</h5>
-                                    <p class="text-muted mb-0 font-size-14">Designer, New York</p>
+                                    <h5 class="font-size-17 mb-0"><?php readText("data/info.txt", 24); ?></h5>
+                                    <p class="text-muted mb-0 font-size-14"><?php readText("data/info.txt", 25); ?></p>
                                 </div>
                             </div>
                         </div><!-- end cradbody -->
@@ -412,14 +409,14 @@ require 'lib/csv.php';
                 <div class="col-lg-4">
                     <div class="card mt-4 border-0 shadow">
                         <div class="card-body p-4">
-                            <span class="badge badge-soft-primary">Developer</span>
-                            <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Why small business should start marketing</a></h4>
-                            <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                            <span class="badge badge-soft-primary"><?php readText("data/info.txt", 26); ?></span>
+                            <h4 class="font-size-22 my-4"><a href="javascript: void(0);"><?php readText("data/info.txt", 27); ?></a></h4>
+                            <p class="text-muted"><?php readText("data/info.txt", 28); ?></p>
                             <div class="d-flex align-items-center mt-4 pt-2">
                                 <img src="lib/will.png" class="rounded-circle avatar-sm me-3" alt="..." />
                                 <div class="flex-body">
-                                    <h5 class="font-size-17 mb-0">Will Cuthbert</h5>
-                                    <p class="text-muted mb-0 font-size-14">Designer, New York</p>
+                                    <h5 class="font-size-17 mb-0"><?php readText("data/info.txt", 29); ?></h5>
+                                    <p class="text-muted mb-0 font-size-14"><?php readText("data/info.txt", 30); ?></p>
                                 </div>
                             </div>
                         </div><!-- end cardbody -->
@@ -444,9 +441,9 @@ require 'lib/csv.php';
                             <div class="row justify-content-center">
                                 <div class="col-lg-10">
                                     <div class="p-3">
-                                        <h2 class="text-white mb-4">Join our Growing Community</h2>
-                                        <p class="text-white-70 font-size-16 mb-4 pb-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                        <a href="javascript: void(0);" class="btn btn-light rounded-pill">Sign Up for free</a>
+                                        <h2 class="text-white mb-4"><?php readText("data/info.txt", 31); ?></h2>
+                                        <p class="text-white-70 font-size-16 mb-4 pb-3"><?php readText("data/info.txt", 32); ?></p>
+                                        <a href="javascript: void(0);" class="btn btn-light rounded-pill"><?php readText("data/info.txt", 33); ?></a>
                                     </div>
                                 </div>
                                 <!-- end col -->
@@ -470,9 +467,8 @@ require 'lib/csv.php';
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2 class="fw-bold mb-4">Get in Touch</h2>
-                    <p class="text-muted mb-5">Et harum quidem rerum facilis est expedita distinctio temporecum soluta nobis est eligendi optio cumque nihil impedit quo minus maxime.</p>
-
+                    <h2 class="fw-bold mb-4"><?php readText("data/info.txt", 34); ?></h2>
+                    <p class="text-muted mb-5"><?php readText("data/info.txt", 35); ?></p>
                     <div>
                         <form method="post" name="myForm" onsubmit="return validateForm()">
                             <p id="error-msg"></p>
@@ -548,7 +544,7 @@ require 'lib/csv.php';
                 <div class="col-lg-4">
                     <div class="mb-4">
                         <a href="index-1.html"><img src="images/logo-light.png" alt="" class="" height="30" /></a>
-                        <p class="text-white-50 my-4">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.</p>
+                        <p class="text-white-50 my-4"><?php readText("data/info.txt", 36); ?></p>
                     </div>
                 </div>
                 <!-- end col -->
@@ -649,5 +645,6 @@ require 'lib/csv.php';
     <!-- App Js -->
     <script src="js/app.js"></script>
 </body>
+
 
 </html>
