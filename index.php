@@ -12,7 +12,7 @@ require 'lib/csv.php';
 
 <head>
     <meta charset="utf-8" />
-    <title><?php readText("data/info.txt", 1); ?></title>
+    <title>Orion Aerospace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
     <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
@@ -129,6 +129,7 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="box"></i>
                             </div>
+
                             <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
                         </div>
                     </div>
@@ -272,11 +273,11 @@ require 'lib/csv.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Will Cuthbert</h5>
+                            <h5 class="font-size-19 mb-1"><?php readText("data/info.txt", 29); ?></h5>
                             <p class="text-muted text-uppercase font-size-14 mb-0">
-                            <h2>Team Member:</h2>
-                            <h4 class="mb-3 font-size-22">Dr. Hiroshi Nakamura - CTO</h4>
-                            <p class="text-muted mb-0">Description: A genius in aerospace engineering</p>
+                            <h2><?php readText("data/info.txt", 37); ?></h2>
+                            <h4 class="mb-3 font-size-22"><?php readText("data/info.txt", 38); ?></h4>
+                            <p class="text-muted mb-0"><?php readText("data/info.txt", 39); ?></p>
                             </p>
                         </div>
                     </div>
@@ -300,11 +301,11 @@ require 'lib/csv.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Hunter Perry</h5>
+                            <h5 class="font-size-19 mb-1"><?php readText("data/info.txt", 24); ?></h5>
                             <p class="text-muted text-uppercase font-size-14 mb-0">
-                            <h2>Team Member:</h2>
-                            <h4 class="mb-3 font-size-22">Capt. Helena Vance - Founder & CEO</h4>
-                            <p class="text-muted mb-0">Description: A former astronaut and a propulsion physicist</p>
+                            <h2><?php readText("data/info.txt", 37); ?></h2>
+                            <h4 class="mb-3 font-size-22"><?php readText("data/info.txt", 40); ?></h4>
+                            <p class="text-muted mb-0"><?php readText("data/info.txt", 41); ?></p>
                             </p>
                         </div>
                     </div>
@@ -328,11 +329,11 @@ require 'lib/csv.php';
                             </ul>
                         </div>
                         <div class="p-4">
-                            <h5 class="font-size-19 mb-1">Brady Venneman</h5>
+                            <h5 class="font-size-19 mb-1"><?php readText("data/info.txt", 19); ?></h5>
                             <p class="text-muted text-uppercase font-size-14 mb-0">
-                            <h2>Team Member:</h2>
-                            <h4 class="mb-3 font-size-22">Leo Rodriguez - Chief of Design</h4>
-                            <p class="text-muted mb-0">Description: With a penchant for blending aesthetics with functionality</p>
+                            <h2><?php readText("data/info.txt", 37); ?></h2>
+                            <h4 class="mb-3 font-size-22"><?php readText("data/info.txt", 42); ?></h4>
+                            <p class="text-muted mb-0"><?php readText("data/info.txt", 43); ?></p>
                             </p>
                         </div>
                     </div>
@@ -469,6 +470,7 @@ require 'lib/csv.php';
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-4"><?php readText("data/info.txt", 34); ?></h2>
                     <p class="text-muted mb-5"><?php readText("data/info.txt", 35); ?></p>
+
                     <div>
                         <form method="post" name="myForm" onsubmit="return validateForm()">
                             <p id="error-msg"></p>
@@ -645,6 +647,5 @@ require 'lib/csv.php';
     <!-- App Js -->
     <script src="js/app.js"></script>
 </body>
-
 
 </html>
