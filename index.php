@@ -12,7 +12,7 @@ require 'lib/csv.php';
 
 <head>
     <meta charset="utf-8" />
-    <title>Orion Aerospace</title>
+    <title><?php readText("data/info.txt", 1); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
     <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
