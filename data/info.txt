@@ -34,10 +34,10 @@ Sign Up for free
 Get in Touch
 Et harum quidem rerum facilis est expedita distinctio temporecum soluta nobis est eligendi optio cumque nihil impedit quo minus maxime.
 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.
-
-
-
-
-
-
-
+Team Member:
+Dr. Hiroshi Nakamura - CTO
+Description: A genius in aerospace engineering
+Capt. Helena Vance - Founder & CEO
+Description: A former astronaut and a propulsion physicist
+Leo Rodriguez - Chief of Design
+Description: With a penchant for blending aesthetics with functionality
