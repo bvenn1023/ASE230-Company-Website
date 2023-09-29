@@ -130,8 +130,8 @@ require 'lib/csv.php';
                             <div class="icon-mono service-icon avatar-md mx-auto mb-4">
                                 <i class="" data-feather="box"></i>
                             </div>
-
                             <?php printTeamMembers("Capt. Helena Vance - Founder & CEO", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
+
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,6 @@ require 'lib/csv.php';
                                 <i class="" data-feather="layers"></i>
                             </div>
                             <?php printTeamMembers("Dr. Hiroshi Nakamura - CTO", "Environmentally-friendly drones powered by solar and wind energy, suitable for both recreational and professional use."); ?>
-
                         </div>
                     </div>
                 </div>
@@ -158,7 +157,6 @@ require 'lib/csv.php';
                             </div>
 
                             <?php printTeamMembers("Leo Rodriguez - Chief of Design", "Modular space habitats intended for research, tourism, and potential future colonization efforts."); ?>
-
                         </div>
                     </div>
                 </div>
