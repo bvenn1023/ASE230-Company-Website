@@ -84,7 +84,6 @@ require 'lib/csv.php';
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
-
                         <span class="badge badge-soft-primary mb-4"><?php readText("data/info.txt", 1); ?></span>
                         <h1 class="font-weight-semibold mb-4 hero-3-title"><?php readText("data/info.txt", 2); ?></h1>
                         <p class="mb-5 text-muted subtitle w-75 mx-auto"><?php readText("data/info.txt", 3); ?></p>
