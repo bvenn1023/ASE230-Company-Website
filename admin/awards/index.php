@@ -5,36 +5,33 @@
 <?php 
 $fp=fopen('../../lib/info.csv','r');
 $content=fgetcsv($fp);
-for($i=0;$i<count($content);$i++){
+//for($i=0;$i<count($content);$i++){
 ?>	
 	<tr>
 		<td>
-		<?php 
+		View Data
 		
-		readcsv('../../lib/info.csv',$i);
-		?>
+		</td>
+		<td>
+		Delete Data
+		</td>
+		<td> 
+		Edit Data
 		</td>
 	</tr>
+	<tr>
+		<td>
+		<a href ="detail.php">View</a>
+		</td>
+		<td>
+		<a href="delete.php">Delete </a>
+		</td>
 	
-<?php }?>
+<?php// }?>
 
 </table>
 
 
-<form method="POST" action='index.php'/>
-<p>Enter line to delete</p>
-<input type="text" name="delselection">
-</form>
-
-<?php 
-if (isset($_POST["delselection"])){
-	deletecsv("../../lib/info.csv",$_POST["delselection"]);
-	print_r($_POST);
-	//echo(readText('../../data/info.txt','1'));
-	//header("Location: index.php");
-	exit;
-}
-?>
 
 
 
