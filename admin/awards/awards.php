@@ -1,36 +1,36 @@
 <?php 
-function displaycsv($csvFilePath) {
-  
-    if (file_exists($csvFilePath)) {
-        // Open the CSV file for reading
-        if (($fp = fopen($csvFilePath, "r")) !== false) {
-    
-            $headers = fgetcsv($fp);
-            
-            // Initialize an array to store the data for each column
-            $columns = array_fill_keys($headers, []);
+function printcsv()
+{
+    // Specify the absolute path to the CSV file
+    $csvFile = '../../lib/info.csv';
 
-            // Read the rest of the rows
-            while (($data = fgetcsv($fp)) !== false) {
-                // run through each column and store the data
-                foreach ($headers as $index => $columnName) {
-                    $columns[$columnName][] = $data[$index];
-                }
-            }
-
-            fclose($fp);
-
-            // Display the columns
-            foreach ($columns as $columnName => $columnData) {
-                echo "<h3>$columnName</h3>";
-                echo implode("<br>", $columnData);
-                echo "<hr>";
-            }
-        } else {
-            echo "Unable to open CSV file.";
+    // Check if the CSV file exists
+    if (file_exists($csvFile)) {
+        // Read the CSV file into an array
+        $csvData = array_map('str_getcsv', file($csvFile));
+		//print_r($csvData);
+		//echo $csvData[2][0];
+        // Extract headers (first row)
+        $headers = array_shift($csvData);
+		
+        // Search for the team member by name in the CSV data
+		$count=0;
+        foreach ($csvData as $row) {
+        //print_r($row);
+		$count+=1;
+		
+		echo "<tr>";
+		echo '<td><a href="detail.php?name=' . urlencode($count) . '">' . $count . '</a></td>';
+		echo "<td>".$row[0]."</td>";
+		echo '<td><a href="edit.php?name=' . urlencode($count) . '">Edit</a> | <a href="delete.php?name=' . urlencode($count) . '">Delete</a></td>';
+		echo "</tr>";
+		
+		
         }
+		
+       
     } else {
-        echo "CSV file does not exist.";
+        echo "CSV file not found.";
     }
 }
 function deletecsv($path,$num){
@@ -45,5 +45,58 @@ function deletecsv($path,$num){
 	
 }
 
-//readcsv();
+function countCSVRows($csvFilePath) {
+    if (file_exists($csvFilePath)) {
+        $rowCount = 0;
+        
+        if (($fp = fopen($csvFilePath, "r")) !== false) {
+            // Loop through the file and count the rows
+            while (($data = fgetcsv($fp)) !== false) {
+                $rowCount++;
+            }
+            
+            fclose($fp);
+        } else {
+            // Unable to open the CSV file
+            return false;
+        }
+        
+        return $rowCount;
+    } else {
+        // CSV file does not exist
+        return false;
+    }
+}
+
+function createcsv(){
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $year = $_POST["year"];
+        $description = $_POST["description"];
+		$row=$_GET["row"];
+        if (empty($year) || empty($description)) {
+            echo '<p>Please fill in all fields.</p>';
+        } else {
+            $csvFile = '../../lib/info.csv';
+			$fp=fopen($csvFile,"a");
+		
+			$list=array(
+			array($row,$year,$description),
+			
+			
+			);
+			//fwrite($fp,"\n");
+			foreach ($list as $fields) {
+				fputcsv($fp, $fields,";");
+				}
+
+			fclose($fp);
+
+  
+            header("Location: index.php?name=" . urlencode($name));
+            exit;
+        }
+    }
+}
+
+    
 ?>

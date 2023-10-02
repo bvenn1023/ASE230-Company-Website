@@ -11,7 +11,7 @@
     <h1>Item List</h1>
 
     <?php
-    $jsonFile = '../../data/info2.json';
+    $jsonFile = '../../data/info.json';
 
     if (file_exists($jsonFile)) {
         $jsonContents = file_get_contents($jsonFile);

@@ -1,14 +1,22 @@
-<form method="POST" action='index.php'/>
-<p>Enter line to delete</p>
-<input type="text" name="delselection">
-</form>
+<?php 
+require "awards.php";
+
+
+
+
+?>
+
+
+
 
 <?php 
-if (isset($_POST["delselection"])){
-	deletecsv("../../lib/info.csv",$_POST["delselection"]);
+if (isset($_GET["name"])){
+	deletecsv("../../lib/info.csv",$_GET["name"]);
+	
 	print_r($_POST);
 	//echo(readText('../../data/info.txt','1'));
-	//header("Location: index.php");
+	header("Location: index.php");
 	exit;
 }
+
 ?>
