@@ -13,7 +13,7 @@ require "awards.php";
 if (isset($_GET["name"])) {
 $name = $_GET["name"];
 
-deletecsv("../../lib/info.csv",$name);
+deletecsv("../../data/info.csv",$name);
 createcsv();
 	
 

@@ -3,11 +3,11 @@
 ?>
 <table border="1">
 <?php 
-$fp=fopen('../../lib/info.csv','r');
+$fp=fopen('../../data/info.csv','r');
 $content=fgetcsv($fp);
 
 printcsv();
-$rowcount=countCSVRows("../../lib/info.csv");
+$rowcount=countCSVRows("../../data/info.csv");
 echo $rowcount;
 ?>	
 	

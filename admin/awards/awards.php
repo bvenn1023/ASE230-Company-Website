@@ -2,7 +2,7 @@
 function printcsv()
 {
     // Specify the absolute path to the CSV file
-    $csvFile = '../../lib/info.csv';
+    $csvFile = '../../data/info.csv';
 
     // Check if the CSV file exists
     if (file_exists($csvFile)) {
@@ -76,7 +76,7 @@ function createcsv(){
         if (empty($year) || empty($description)) {
             echo '<p>Please fill in all fields.</p>';
         } else {
-            $csvFile = '../../lib/info.csv';
+            $csvFile = '../../data/info.csv';
 			$fp=fopen($csvFile,"a");
 		
 			$list=array(
