@@ -1,20 +1,11 @@
-
-        <?php
-      
-        $contacts = [
-            ['name' => 'Brady Venneman', 'email' => 'vennemanb1@nku.edu', 'phone' => '123-456-7890'],
-            ['name' => 'Hunter Perry', 'email' => 'perryh2@nku.edu', 'phone' => '859-567-8910'],
-            ['name' => 'Will Cuthbert', 'email' => 'cuthbertw1@nku.edu', 'phone' => '859-219-4789'],
-           
-        ];
+<?php
+    $contacts = [
+            ['id'=> '1', 'name' => 'Brady Venneman', 'email' => 'vennemanb1@nku.edu', 'phone' => '123-456-7890'],
+            ['id' => '2', 'name' => 'Hunter Perry', 'email' => 'perryh2@nku.edu', 'phone' => '859-567-8910'],
+            ['id' => '3', 'name' => 'Will Cuthbert', 'email' => 'cuthbert', 'phone' => '859-219-4789'],
+    ];
 
   
-        foreach ($contacts as $contact) {
-            echo "<tr>";
-            echo "<td>{$contact['name']}</td>";
-            echo "<td>{$contact['email']}</td>";
-            echo "<td>{$contact['phone']}</td>";
-            echo "</tr>";
-        }
-        ?>
+      
+?>
 
