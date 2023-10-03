@@ -11,17 +11,12 @@ function readText($path,$lineNumber)
 		
 		
 		if ($lineNumber >= 1 && $lineNumber <= $lineCount) {
-			$lineContent = $lines[$lineNumber - 1];
+			$lineContent = $lines[$lineNumber-1];
 			//need a for loop that echos below table as well as content based on line number
 			
-			
+			echo $lineContent;
             
-            echo '<tr>';
-            echo '<td><a href="detail.php?name=' . urlencode($lineNumber) . '">' . $lineNumber . '</a></td>';
-            echo '<td>' . $lineContent . '</td>';
-			
-            echo '<td><a href="edit.php?name=' . urlencode($lineNumber) . '">Edit</a> | <a href="delete.php?name=' . urlencode($lineNumber) . '">Delete</a></td>';
-            echo '</tr>';
+            
 		} 
 			else {
 				return "Line number out of range";
@@ -40,6 +35,42 @@ function deleteText($path, $lineNumber){
 	}
 	unset($lines[$lineNumber-1]);
 	file_put_contents($path,implode('',$lines));
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+function editText($path){
+	if (isset($_POST['newContent'])) {
+    $filename = $path;
+    $newContent = $_POST['newContent'];
+
+    // Check if the file exists
+    if (file_exists($filename)) {
+        // Open the file in write mode
+        $file = fopen($filename, 'w');
+        
+        // Write the new content to the file
+        if ($file) {
+            fwrite($file, $newContent);
+            fclose($file);
+            echo "File '$filename' has been successfully updated.";
+        } else {
+            echo "Unable to open the file for writing.";
+        }
+    } else {
+        echo "File '$filename' does not exist.";
+    }
+} else {
+    echo "Please provide both a filename and new content.";
+}
+	
+	
 	
 	
 	
