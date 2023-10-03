@@ -4,14 +4,21 @@
 	<title>index</title>
 </head>
 <body>
-	<h1>Welcome Admin</h1>
-	<h1>click a link below to make changes to the page</h1>
-	<h2>delete item</h2>
-	<a href="delete.php">delete item</a>
-
-
-
-
-
+<p><a href="create.php?row=<?php echo $rowcount; ?>">New Item</a></p>
+<table border="1">
+<?php require "pages.php";
+	
+	$lines=file('../../data/info.txt');
+	for($i=0;$i<count($lines);$i++){
+		
+	
+	echo '<tr>';
+	readText("../../data/info.txt",$i); 
+	echo '</tr>';
+	
+	}
+?>
+</table>
+<p><a href="create.php?row=<?php echo $rowcount; ?>">New Item</a></p>
 </body>
 </html>
