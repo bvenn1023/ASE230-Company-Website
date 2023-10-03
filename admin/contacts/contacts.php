@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contact List</title>
-</head>
-<body>
-    <h1>Contact List</h1>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-        </tr>
+
         <?php
       
         $contacts = [
@@ -29,6 +17,4 @@
             echo "</tr>";
         }
         ?>
-    </table>
-</body>
-</html>
+
