@@ -6,7 +6,7 @@ function printTeamMembers($name, $description) {
     echo '<p class="text-muted mb-0">Description: ' . $description . '</p>';
 }
 
-$jsonFile = '../../data/info.json';
+$jsonFile = __dir__.'../../data/info.json';
 
 if (file_exists($jsonFile)) {
     $jsonData = file_get_contents($jsonFile);
