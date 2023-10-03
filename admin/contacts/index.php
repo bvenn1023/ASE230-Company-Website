@@ -3,14 +3,13 @@ require_once('contacts.php');
 loadPage('contacts','Contact us');
 ?>
 <?php
-$contactRequests = []; // Assuming an array of contact requests
+$contactRequests = []; 
 
         
 foreach ($contactRequests as $contact) {
 
 
-    $id = $contact['id']; // Replace 'id' with your unique identifier
-
+    $id = $contact['contacts'];
     $name = $contact['name'];
     $email = $contact['email'];
     echo "<tr>";
