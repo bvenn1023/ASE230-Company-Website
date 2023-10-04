@@ -30,11 +30,6 @@ function readText($path,$lineNumber)
 function deleteText($path){
 	
 	unlink($path);
-	
-	
-	
-	
-	
 }
 
 
@@ -45,7 +40,7 @@ function editText($path){
 
     // Check if the file exists
     if (file_exists($path)) {
-        // Open the file in write mode
+        
         $file = fopen($path, 'w');
         
         // Write the new content to the file
@@ -58,7 +53,7 @@ function editText($path){
         }
     } else {
         echo "File '$filename' does not exist.";
-    }
+    }//else randomly executes sometimes?
 } else {
     echo "Please provide both a filename and new content.";
 }

@@ -6,14 +6,10 @@ function printcsv()
 
     // Check if the CSV file exists
     if (file_exists($csvFile)) {
-        // Read the CSV file into an array
+        
         $csvData = array_map('str_getcsv', file($csvFile));
-		//print_r($csvData);
-		//echo $csvData[2][0];
-        // Extract headers (first row)
+		//dont think this does anything here
         $headers = array_shift($csvData);
-		
-        // Search for the team member by name in the CSV data
 		$count=0;
         foreach ($csvData as $row) {
         //print_r($row);
