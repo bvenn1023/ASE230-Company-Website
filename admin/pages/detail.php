@@ -4,7 +4,7 @@
 	<title>index</title>
 </head>
 <body>
-<p><a href="create.php?row=<?php echo $rowcount; ?>">New Item</a></p>
+
 
 <?php require "pages.php";
 	
@@ -19,7 +19,6 @@
 	
 	}
 ?>
-
-<p><a href="create.php?row=<?php echo $rowcount; ?>">New Item</a></p>
+<p><a href="index.php">Back to Item List</a></p>
 </body>
 </html>

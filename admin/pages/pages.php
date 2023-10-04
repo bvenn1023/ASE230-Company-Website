@@ -27,16 +27,9 @@ function readText($path,$lineNumber)
 		}
 }
 
-function deleteText($path, $lineNumber){
-	$lines=file($path);
-	if ($lineNumber<1||$lineNumber>count($lines)){
-		echo('selection out of bounds');
-		die();
-	}
-	unset($lines[$lineNumber-1]);
-	file_put_contents($path,implode('',$lines));
+function deleteText($path){
 	
-	
+	unlink($path);
 	
 	
 	
@@ -47,19 +40,19 @@ function deleteText($path, $lineNumber){
 
 function editText($path){
 	if (isset($_POST['newContent'])) {
-    $filename = $path;
+   
     $newContent = $_POST['newContent'];
 
     // Check if the file exists
-    if (file_exists($filename)) {
+    if (file_exists($path)) {
         // Open the file in write mode
-        $file = fopen($filename, 'w');
+        $file = fopen($path, 'w');
         
         // Write the new content to the file
         if ($file) {
             fwrite($file, $newContent);
             fclose($file);
-            echo "File '$filename' has been successfully updated.";
+            echo "File '$path' has been successfully updated.";
         } else {
             echo "Unable to open the file for writing.";
         }
@@ -71,14 +64,15 @@ function editText($path){
 }
 	
 	
-	
-	
-	
-	
-	
-	
-	
 }
+function createFile($fileName, $text){
+	$file=fopen($fileName,"w");
+	fwrite($file,$text);
+	fclose($file);
+	header("Location: index.php");
+}
+	
+	
 ?>
 
 

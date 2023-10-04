@@ -12,15 +12,20 @@
 	
 <?php
 require "pages.php";
+echo "current contents: <br>";
+echo file_get_contents($_GET["name"]);
+echo "<br>";
 if (isset($_GET["name"])) {
 
 editText($_GET["name"]);
-
-	
+echo "<br> updated contents: <br>";
+echo file_get_contents($_GET["name"]);
+echo "<br>";
 
 
 } else {
-    echo '<p>Item not found.</p>';
+    echo '<p>error accessing file</p>';
 }
 
 ?>
+<p><a href="index.php">Back to Item List</a></p>

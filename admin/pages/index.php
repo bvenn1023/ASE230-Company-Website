@@ -4,7 +4,7 @@
 	<title>index</title>
 </head>
 <body>
-<p><a href="create.php?row=<?php echo $rowcount; ?>">New Item</a></p>
+
 <table border="1">
 <?php require "pages.php";
 	
