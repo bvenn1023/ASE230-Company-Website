@@ -4,14 +4,37 @@
 	<title>index</title>
 </head>
 <body>
-	<h1>Welcome Admin</h1>
-	<h1>click a link below to make changes to the page</h1>
-	<h2>delete item</h2>
-	<a href="delete.php">delete item</a>
 
+<table border="1">
+<?php require "pages.php";
+	
+    if (!is_dir("../../data")) {
+        echo "Folder not found";
+        return;
+    }
 
+    // Get all files in the folder with .txt extension
+    $txtFiles = glob("../../data". '/*.txt');
 
-
-
+    // Check if there are any .txt files
+    if (empty($txtFiles)) {
+        echo "No .txt files found in the folder";
+        return;
+    }else{
+		
+		
+		for($i=0;$i<count($txtFiles);$i++){
+			echo "<tr>";
+			
+			echo '<td><a href="detail.php?name=' . urlencode($txtFiles[$i]) . '">' . "view" . '</a></td>';
+			echo "<td>".$txtFiles[$i]."</td>";
+			echo '<td><a href="edit.php?name=' . urlencode($txtFiles[$i]) . '">Edit</a> | <a href="delete.php?name=' . urlencode($txtFiles[$i]) . '">Delete</a></td>';
+			echo "</tr>";
+		}
+		
+	}
+?>	
+</table>
+<p><a href="create.php?row=<?php echo $rowcount; ?>">New Item</a></p>
 </body>
 </html>

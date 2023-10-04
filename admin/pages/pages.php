@@ -1,16 +1,22 @@
 <?php
 
-function readText($path, $lineNumber)
+function readText($path,$lineNumber)
 {
 	$content = file_get_contents($path);
-
+	
 	if ($content !== false) {
 		$lines = explode("\n", $content);
 		$lineCount = count($lines);
-
+		
+		
+		
 		if ($lineNumber >= 1 && $lineNumber <= $lineCount) {
-			$lineContent = $lines[$lineNumber - 1];
+			$lineContent = $lines[$lineNumber-1];
+			//need a for loop that echos below table as well as content based on line number
+			
 			echo $lineContent;
+            
+            
 		} 
 			else {
 				return "Line number out of range";
@@ -21,34 +27,53 @@ function readText($path, $lineNumber)
 		}
 }
 
-function deleteText($path, $lineNumber){
-	$lines=file($path);
-	if ($lineNumber<1||$lineNumber>count($lines)){
-		echo('selection out of bounds');
-		die();
-	}
-	unset($lines[$lineNumber-1]);
-	file_put_contents($path,implode('',$lines));
+function deleteText($path){
 	
-	
+	unlink($path);
 	
 	
 	
 	
 	
 }
+
+
+function editText($path){
+	if (isset($_POST['newContent'])) {
+   
+    $newContent = $_POST['newContent'];
+
+    // Check if the file exists
+    if (file_exists($path)) {
+        // Open the file in write mode
+        $file = fopen($path, 'w');
+        
+        // Write the new content to the file
+        if ($file) {
+            fwrite($file, $newContent);
+            fclose($file);
+            echo "File '$path' has been successfully updated.";
+        } else {
+            echo "Unable to open the file for writing.";
+        }
+    } else {
+        echo "File '$filename' does not exist.";
+    }
+} else {
+    echo "Please provide both a filename and new content.";
+}
+	
+	
+}
+function createFile($fileName, $text){
+	$file=fopen($fileName,"w");
+	fwrite($file,$text);
+	fclose($file);
+	header("Location: index.php");
+}
+	
+	
 ?>
 
 
-<table>
-	<tr>
-		<td> <?php readText('../../data/info.txt','1')?></td>
-	</tr>
-	<tr>
-		<td><?php readText ('../../data/info.txt','2')?></td>
-	</tr>
 
-
-
-
-</table>
