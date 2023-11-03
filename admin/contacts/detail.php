@@ -1,22 +1,24 @@
+<?php
 
-    <?php
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-    if (isset($_GET['contacts'])) {
-        $id = $_GET['contacts']; 
-    
-        $contactDetails = []; 
-        
-        if (isset($contactDetails[$contacts])) {
-            $contact = $contactDetails[$contacts];
-            echo "<p><strong>Name:</strong> {$contact['name']}</p>";
-            echo "<p><strong>Email:</strong> {$contact['email']}</p>";
-            echo "<p><strong>Phone:</strong> {$contact['phone']}</p>";
-
-        } else {
-            echo "<p>Contact not found.</p>";
+    $contact = null;
+    foreach ($contacts as $c) {
+        if ($c['id'] == $id) {
+            $contact = $c;
+            break;
         }
-    } else {
-        echo "<p>Invalid request.</p>";
     }
-    ?>
 
+    if ($contact !== null) {
+        echo "<p>Name: {$contact['name']}</p>";
+        echo "<p>Email: {$contact['email']}</p>";
+        echo "<p>Phone: {$contact['phone']}</p>";
+    } else {
+        echo "<p>Contact not found.</p>";
+    }
+} else {
+    echo "<p>Invalid request.</p>";
+}
+?>

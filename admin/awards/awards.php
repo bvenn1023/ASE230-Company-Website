@@ -1,9 +1,12 @@
 <?php 
+
 class csvmanager{
 	public $csvFile;
 	public function __construct($path){
 		$this->csvFile=$path;
 	}
+	
+	
 	public function printcsv()
 	{
 		// Specify the absolute path to the CSV file
