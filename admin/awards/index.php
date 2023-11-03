@@ -5,9 +5,10 @@
 <?php 
 $fp=fopen('../../data/info.csv','r');
 $content=fgetcsv($fp);
+$csvManager=new csvmanager("../../data/info.csv");
 
-printcsv();
-$rowcount=countCSVRows("../../data/info.csv");
+$csvManager->printcsv();
+$rowcount=$csvManager->countCSVRows("../../data/info.csv");
 echo $rowcount;
 ?>	
 	
