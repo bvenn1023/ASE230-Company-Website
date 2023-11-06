@@ -7,7 +7,7 @@ class csvmanager{
 	}
 	
 	
-	public static function printcsv()
+	public function printcsv()
 	{
 		// Specify the absolute path to the CSV file
 		
@@ -41,7 +41,7 @@ class csvmanager{
 			echo "CSV file not found.";
 		}
 	}
-	public static function deletecsv($num){
+	public function deletecsv($num){
 		
 		$csvData = file($this->csvFile);
 		if ($num >= 0 && $num < count($csvData)) {
@@ -53,7 +53,7 @@ class csvmanager{
 		
 	}
 
-	public static function countCSVRows() {
+	public function countCSVRows() {
 		if (file_exists($this->csvFile)) {
 			$rowCount = 0;
 			
@@ -76,7 +76,7 @@ class csvmanager{
 		}
 	}
 
-	public static function createcsv(){
+	public function createcsv(){
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$year = $_POST["year"];
 			$description = $_POST["description"];
