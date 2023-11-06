@@ -10,11 +10,13 @@
 
 <?php
 require "awards.php";
+$csvManager=new csvmanager('../../data/info.csv');
+
 if (isset($_GET["name"])) {
 $name = $_GET["name"];
 
-deletecsv("../../data/info.csv",$name);
-createcsv();
+$csvManager->deletecsv($name);
+$csvManager->createcsv();
 	
 
 

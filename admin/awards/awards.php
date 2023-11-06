@@ -1,7 +1,7 @@
 <?php 
 
 class csvmanager{
-	public $csvFile;
+	public static $csvFile;
 	public function __construct($path){
 		$this->csvFile=$path;
 	}
