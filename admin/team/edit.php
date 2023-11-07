@@ -15,17 +15,25 @@
         $name = $_GET["name"];
         $jsonFile = '../../data/info.json';
 
-        require('team.php'); 
+        require('team.php');
 
-        $items = getAll($jsonFile);
+        $jsonManager = new jsonManager();
+        $items = $jsonManager->getAll($jsonFile);
 
         if (isset($items[$name])) {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $newName = $_POST["name"];
                 $description = $_POST["description"];
 
-                if (empty($description)) {
+                if (empty($newName) || empty($description)) {
                     echo '<p>Please fill in all fields.</p>';
                 } else {
+                    if ($newName !== $name) {
+                        $items[$newName] = $items[$name];
+                        unset($items[$name]);
+                        $name = $newName;
+                    }
+
                     $items[$name]['Description'] = $description;
 
                     $updatedJsonContents = json_encode($items, JSON_PRETTY_PRINT);
@@ -42,7 +50,7 @@
 
             echo '<form method="POST">';
             echo '<label for="name">Item Name:</label>';
-            echo '<input type="text" id="name" name="name" value="' . htmlspecialchars($name) . '" readonly><br><br>';
+            echo '<input type="text" id="name" name="name" value="' . htmlspecialchars($name) . '" required><br><br>';
 
             echo '<label for="description">Description:</label><br>';
             echo '<textarea id="description" name="description" rows="4" cols="50" required>' . htmlspecialchars($description) . '</textarea><br><br>';

@@ -36,6 +36,8 @@
     $jsonFile = '../../data/info.json';
     require('team.php');
 
+    $jsonManager = new jsonManager();
+
     function displayItems($items)
     {
         echo '<table>';
@@ -50,7 +52,7 @@
         echo '</table>';
     }
 
-    $items = getAll($jsonFile);
+    $items = $jsonManager->getAll($jsonFile);
 
     if (!empty($items)) {
         displayItems($items);

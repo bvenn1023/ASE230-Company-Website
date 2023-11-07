@@ -1,81 +1,78 @@
 <?php
 
-$jsonFile = '../../data/info.json';
-
-function getAll($jsonFile)
+class jsonManager
 {
-    $jsonContents = file_get_contents($jsonFile);
-    $items = json_decode($jsonContents, true);
+    public static function getAll($jsonFile)
+    {
+        $jsonContents = file_get_contents($jsonFile);
+        $items = json_decode($jsonContents, true);
 
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        error_log("JSON decoding error: " . json_last_error_msg());
-        return [];
-    }
-
-    return $items;
-}
-
-function create($jsonFile, $name, $description)
-{
-    $items = getAll($jsonFile);
-
-    if ($items !== null) {
-        $newItem = [
-            'Description' => $description,
-            'Applications' => [],
-        ];
-
-        $items[$name] = $newItem;
-        $updatedJsonContents = json_encode($items, JSON_PRETTY_PRINT);
-
-        if (file_put_contents($jsonFile, $updatedJsonContents) !== false) {
-            return true;
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            error_log("JSON decoding error: " . json_last_error_msg());
+            return [];
         }
+
+        return $items;
     }
 
-    return false;
-}
+    public static function create($jsonFile, $name, $description)
+    {
+        $items = self::getAll($jsonFile);
 
-function editText($jsonFile, $name, $description)
-{
-    $items = getAll($jsonFile);
+        if ($items !== null) {
+            $newItem = [
+                'Description' => $description,
+                'Applications' => [],
+            ];
 
-    if ($items !== null && isset($items[$name])) {
-        $items[$name]['Description'] = $description;
-        $updatedJsonContents = json_encode($items, JSON_PRETTY_PRINT);
+            $items[$name] = $newItem;
+            $updatedJsonContents = json_encode($items, JSON_PRETTY_PRINT);
 
-        if (file_put_contents($jsonFile, $updatedJsonContents) !== false) {
-            return true;
+            if (file_put_contents($jsonFile, $updatedJsonContents) !== false) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static function editText($jsonFile, $name, $description)
+    {
+        $items = self::getAll($jsonFile);
+
+        if ($items !== null && isset($items[$name])) {
+            $items[$name]['Description'] = $description;
+            $updatedJsonContents = json_encode($items, JSON_PRETTY_PRINT);
+
+            if (file_put_contents($jsonFile, $updatedJsonContents) !== false) {
+                return true;
+            } else {
+                error_log("Failed to write to JSON file: " . $jsonFile);
+            }
         } else {
-            error_log("Failed to write to JSON file: " . $jsonFile);
+            error_log("Item not found: " . $name);
         }
-    } else {
-        error_log("Item not found: " . $name);
+
+        return false;
     }
 
-    return false;
-}
+    public static function deleteText($jsonFile, $name)
+    {
+        $items = self::getAll($jsonFile);
 
-function deleteText($jsonFile, $name)
-{
-    $items = getAll($jsonFile);
+        if ($items !== null && isset($items[$name])) {
+            unset($items[$name]);
+            $updatedJsonContents = json_encode($items, JSON_PRETTY_PRINT);
 
-    if ($items !== null && isset($items[$name])) {
-        unset($items[$name]);
-        $updatedJsonContents = json_encode($items, JSON_PRETTY_PRINT);
-
-        if (file_put_contents($jsonFile, $updatedJsonContents) !== false) {
-            return true;
+            if (file_put_contents($jsonFile, $updatedJsonContents) !== false) {
+                return true;
+            } else {
+                error_log("Failed to write to JSON file: " . $jsonFile);
+            }
         } else {
-            error_log("Failed to write to JSON file: " . $jsonFile);
+            error_log("Item not found: " . $name);
         }
-    } else {
-        error_log("Item not found: " . $name);
+
+        return false;
     }
-
-    return false;
 }
-
-
-
-?>

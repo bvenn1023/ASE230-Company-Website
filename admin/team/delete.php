@@ -16,9 +16,11 @@
         $name = $_GET["name"];
         $jsonFile = '../../data/info.json';
 
-        require('team.php'); 
+        require('team.php');
 
-        if (deleteText($jsonFile, $name)) {
+        $jsonManager = new jsonManager();
+
+        if ($jsonManager->deleteText($jsonFile, $name)) {
             echo '<p>Item deleted successfully.</p>';
         } else {
             echo '<p>Failed to delete item.</p>';

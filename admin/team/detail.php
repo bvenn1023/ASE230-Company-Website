@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Details</title>
 </head>
+
 <body>
     <h1>Item Details</h1>
 
@@ -12,9 +14,9 @@
     if (isset($_GET["name"])) {
         $name = $_GET["name"];
 
+        require('team.php');
         $jsonFile = '../../data/info.json';
-        $jsonContents = file_get_contents($jsonFile);
-        $items = json_decode($jsonContents, true);
+        $items = jsonManager::getAll($jsonFile);
 
         if (isset($items[$name])) {
             echo '<h2>' . htmlspecialchars($name) . '</h2>';
@@ -41,4 +43,5 @@
 
     <p><a href="index.php">Back to Item List</a></p>
 </body>
+
 </html>

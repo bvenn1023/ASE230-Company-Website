@@ -11,7 +11,10 @@
     <h1>Create New Item</h1>
 
     <?php
-    $jsonFile = '../../data/info.json'; 
+    $jsonFile = '../../data/info.json';
+    require('team.php');
+
+    $jsonManager = new jsonManager();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
@@ -20,9 +23,7 @@
         if (empty($name) || empty($description)) {
             echo '<p>Please fill in all fields.</p>';
         } else {
-            require('team.php'); 
-
-            if (create($jsonFile, $name, $description)) {
+            if ($jsonManager->create($jsonFile, $name, $description)) {
                 header("Location: edit.php?name=" . urlencode($name));
                 exit;
             } else {
