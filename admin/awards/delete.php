@@ -1,17 +1,10 @@
 <?php 
 require "awards.php";
-$csvManager=new csvmanager('../../data/info.csv');
+$csvManager=new csvmanager();
 
-
-
-?>
-
-
-
-
-<?php 
+ 
 if (isset($_GET["name"])){
-	$csvManager->deletecsv($_GET["name"]);
+	$csvManager->deletecsv($_GET["name"],'../../data/info.csv');
 	
 	header("Location: index.php");
 	exit;

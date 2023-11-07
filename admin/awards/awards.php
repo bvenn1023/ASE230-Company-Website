@@ -1,21 +1,19 @@
 <?php 
 
 class csvmanager{
-	public static $csvFile;
-	public function __construct($path){
-		$this->csvFile=$path;
-	}
+	
+
 	
 	
-	public function printcsv()
+	public static function printcsv($path)
 	{
 		// Specify the absolute path to the CSV file
 		
 
 		// Check if the CSV file exists
-		if (file_exists($this->csvFile)) {
+		if (file_exists($path)) {
 			// Read the CSV file into an array
-			$csvData = array_map('str_getcsv', file($this->csvFile));
+			$csvData = array_map('str_getcsv', file($path));
 			//print_r($csvData);
 			//echo $csvData[2][0];
 			// Extract headers (first row)
@@ -41,23 +39,23 @@ class csvmanager{
 			echo "CSV file not found.";
 		}
 	}
-	public function deletecsv($num){
+	public static function deletecsv($num,$path){
 		
-		$csvData = file($this->csvFile);
+		$csvData = file($path);
 		if ($num >= 0 && $num < count($csvData)) {
 		// Remove the specified line
 			unset($csvData[$num]);
-			file_put_contents($this->csvFile, implode('', $csvData));
+			file_put_contents($path, implode('', $csvData));
 		}
 		
 		
 	}
 
-	public function countCSVRows() {
-		if (file_exists($this->csvFile)) {
+	public static function countCSVRows($path) {
+		if (file_exists($path)) {
 			$rowCount = 0;
 			
-			if (($fp = fopen($this->csvFile, "r")) !== false) {
+			if (($fp = fopen($path, "r")) !== false) {
 				// Loop through the file and count the rows
 				while (($data = fgetcsv($fp)) !== false) {
 					$rowCount++;
@@ -76,7 +74,7 @@ class csvmanager{
 		}
 	}
 
-	public function createcsv(){
+	public static function createcsv(){
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$year = $_POST["year"];
 			$description = $_POST["description"];
@@ -85,7 +83,7 @@ class csvmanager{
 				echo '<p>Please fill in all fields.</p>';
 			} else {
 				$csvFile = '../../data/info.csv';
-				$fp=fopen($this->csvFile,"a");
+				$fp=fopen($csvFile,"a");
 			
 				$list=array(
 				array($row,$year,$description),

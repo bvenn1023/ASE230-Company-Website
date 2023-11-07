@@ -10,7 +10,8 @@
 
     <?php
 require "awards.php";
-createcsv();
+$csvManager=new csvmanager();
+$csvManager->createcsv();
     ?>
 
     <form method="POST">
