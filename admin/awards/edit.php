@@ -11,14 +11,13 @@
 <?php
 require "awards.php";
 $csvManager=new csvmanager('../../data/info.csv');
-
+$csvManager->printrow('../../data/info.csv');
 if (isset($_GET["name"])) {
 $name = $_GET["name"];
-
-$csvManager->deletecsv($name);
-$csvManager->createcsv();
-	
-
+	if (isset($_POST["year"])&&isset($_POST["description"])){
+		$csvManager->deletecsv($name,'../../data/info.csv');
+		$csvManager->createcsv();
+	}
 
 } else {
     echo '<p>Item not found.</p>';
@@ -31,7 +30,7 @@ $csvManager->createcsv();
         <input type="text" id="year" name="year" required><br><br>
 
         <label for="description">Description:</label><br>
-        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+        <textarea id="description" name="description" rows="4" cols="50" required><?php $csvManager->printrow('../../data/info.csv');?></textarea><br><br>
 
         <input type="submit" value="Create Item">
     </form>

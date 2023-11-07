@@ -73,6 +73,18 @@ class csvmanager{
 			return false;
 		}
 	}
+	
+	public static function printrow($path) {
+		if (file_exists($path)) {
+			// Read the CSV file into an array
+			$csvData = array_map('str_getcsv', file($path));
+			//print_r($csvData);
+			$line = $_GET["name"];
+			echo ($csvData[$line][0]);
+		} else {
+			echo "CSV file not found.";
+		}
+	}
 
 	public static function createcsv(){
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
